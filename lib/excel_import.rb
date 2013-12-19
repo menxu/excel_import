@@ -1,5 +1,13 @@
-class ExcelImport
-	def self.own_excel
-		puts "self.own_excel"
-	end
+module ExcelImport
+  module Base
+    extend ActiveSupport::Concern
+
+    module ClassModule
+      def demo_method
+        puts "demo demo_method"
+      end
+    end
+  end
 end
+
+ActiveRecord::Base.send :include, ExcelImport::Base
