@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- encoding : utf-8 -*-
 require 'rubygems'
 
 require 'active_support/all'
@@ -9,4 +9,4 @@ require 'mysql2'
 require 'roo'
 require 'axlsx'
 
-require 'excel_import'
+require 'excel-import'

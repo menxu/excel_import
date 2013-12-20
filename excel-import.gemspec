@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
 	s.date	    	= '2013-12-15'
 	s.summary    	= 'excel_import'
 	s.description   = 'excel import simple example'
-	s.authors		= ['Test make gem Demo']
+	s.authors		= ['Men Xu']
 	s.email			= 'menxu_work@163.com'
 	s.files			= ['lib/excel_import.rb']
 	s.homepage		= 'http://rubygems.org/gems/excel_import'
