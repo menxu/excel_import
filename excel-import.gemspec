@@ -1,13 +1,12 @@
 Gem::Specification.new do |s|
-	s.name	    	= 'excel_import'
+	s.name	    	= 'excel-import'
 	s.version   	= '0.0.0'
 	s.date	    	= '2013-12-15'
-	s.summary    	= 'excel_import'
+	s.summary    	= 'excel-import'
 	s.description   = 'excel import simple example'
 	s.authors		= ['Men Xu']
 	s.email			= 'menxu_work@163.com'
-	s.files			= ['lib/excel_import.rb']
-	s.homepage		= 'http://rubygems.org/gems/excel_import'
+	s.homepage		= 'http://rubygems.org/gems/excel-import'
 	s.license		= 'MIT'
 
 	s.files			= Dir.glob("lib/**/**") + %w(README.md)
