@@ -19,10 +19,7 @@ class TestMigration < ActiveRecord::Migration
 end
 
 class Book < ActiveRecord::Base
-  excel_import :common, :fields => [:title, :price, :url],
-                                :default => {
-                                  :kind => '编程'
-                                }
+  excel_import :common, :fields => [:title, :price, :kind]
 
   excel_import :progream, :fields => [:title, :price, :url],
                                 :default => {
@@ -51,7 +48,7 @@ describe 'Excel导入' do
     it {
       Book.methods.include?(:get_excel_progream).should == true
     }
-    
+
     it {
       Book.methods.include?(:parse_excel_common).should == true
     }
@@ -64,6 +61,51 @@ describe 'Excel导入' do
 
   end
 
+  describe '.parse_excel_**' do
+    context 'common_books' do
+      before {
+        @common_books = Book.parse_excel_common File.new('spec/data/common_books.xls')
+      }
+
+      it {
+        @common_books.count.should == 4
+      }
+
+      it{
+        @common_books.each { |book|
+          book.should be_new_record
+        }
+      }
+
+      it {
+        Book.count.should == 0
+      }
+
+      it '查看标题' do
+        @common_books.map { |book|
+          book.title
+        }.should == ['ruby 元编程','智慧背囊','新疆之疆','大地之母']
+      end
+
+      it '查看价格' do
+        @common_books.map { |book|
+          book.price
+        }.should == [65,136,58,68]
+      end
+
+      it '查看分类' do
+        @common_books.map { |book|
+          book.kind
+        }.should == ['编程','读物','地理','文学']
+      end
+
+      it '查看不存在' do
+        @common_books.map { |book|
+          book.url
+        }.should == [nil,nil,nil,nil]
+      end
+    end
+  end
 
 end
 
