@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
 	s.name	    	= 'excel-import'
-	s.version   	= '0.0.333
+	s.version   	= '0.0.2'
 	s.date	    	= '2013-12-15'
 	s.summary    	= 'excel-import'
 	s.description   = 'excel import study example'
