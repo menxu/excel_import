@@ -14,5 +14,6 @@ Gem::Specification.new do |s|
 	
 	s.add_dependency('roo',   '1.10.3')
 	s.add_dependency('axlsx', '1.3.5')
-
+	s.add_dependency('rubyzip', '>= 1.0.0')
+	s.add_dependency('zip-zip', '0.2')
 end
